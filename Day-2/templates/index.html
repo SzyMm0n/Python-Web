@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" xmlns="http://www.w3.org/1999/html">
+<html lang="pl" >
+
+<head>
+    <title>Simple calculator</title>
+    <style>
+        *{
+            font-family: "Bahnschrift", serif;
+        }
+        .div{
+            float: left;
+            width: 33.3%;
+            height: 1%;
+            font-size: 15px;
+            margin: auto;
+            border-right: 10px;
+        }
+        input{
+            border-radius: 10px;
+            border: black solid 1px;
+            font-size: 20px;
+            box-shadow: 3px 3px 10px;
+            border-right: 10px;
+        }
+        label{
+            font-size: 20px;
+        }
+        select{
+            padding: 4px;
+            font-size: 15px;
+            border: black solid 1px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px;
+        }
+        button{
+            margin-top: 105%;
+            padding-top:10px ;
+            padding-bottom: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            border-radius: 35px;
+            box-shadow: 3px 3px 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1 style="place-self: center">Kalkulator</h1>
+
+<form method="POST" action="/">
+
+    <div class="div">
+        <label> Pierwsza liczba <br/>
+            <input type="text" name='number_1' required placeholder="Podaj liczbę"/>
+        </label>
+    </div>
+
+    <div class="div">
+        <label> Druga liczba <br/>
+            <input type="text" name='number_2' required placeholder="Podaj liczbę"/>
+        </label>
+    </div>
+
+    <div class="div">
+    <label> Operacja <br/>
+        <select name="operation">
+            <option value="add">Dodaj</option>
+            <option value="subtract">Odejmij</option>
+            <option value="multiply">Pomnóż</option>
+            <option value="divide">Podziel</option>
+        </select>
+    </label>
+    </div>
+
+    <div style="place-self: center" >
+    <button type="submit">Policz</button>
+    {% if result is not none %}
+        <h1>{{ result }}</h1>
+    {% endif %}
+    </div>
+
+</form>
+</body>
+
+</html>
